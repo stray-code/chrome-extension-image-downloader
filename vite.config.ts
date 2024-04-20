@@ -25,7 +25,7 @@ const manifest = defineManifest({
   side_panel: {
     default_path: "src/sidePanel/index.html",
   },
-  permissions: ["sidePanel"],
+  permissions: ["sidePanel", "downloads"],
 });
 
 // https://vitejs.dev/config/

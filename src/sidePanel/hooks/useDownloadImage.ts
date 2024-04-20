@@ -1,16 +1,13 @@
 import type { Image } from "../types";
 
 export const useDownloadImage = () => {
-  const downloadImage = (image: Image) => {
-    const link = document.createElement("a");
-    link.href = image.url;
-    link.download = `${image.fileName}.${image.extension}`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const downloadImage = async (image: Image) => {
+    await chrome.downloads.download({
+      url: image.url,
+    });
   };
 
-  const downloadImages = (images: Image[]) => {
+  const downloadImages = async (images: Image[]) => {
     const result = confirm(
       [
         `${images.length}枚の画像をダウンロードします。`,
