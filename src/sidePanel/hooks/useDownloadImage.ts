@@ -19,7 +19,14 @@ export const useDownloadImage = () => {
       return;
     }
 
-    images.forEach(downloadImage);
+    const time = Date.now();
+
+    for (const image of images) {
+      await chrome.downloads.download({
+        url: image.url,
+        filename: `${time}/${image.fileName}.${image.extension}`,
+      });
+    }
   };
 
   return {
