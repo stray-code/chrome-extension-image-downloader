@@ -6,7 +6,7 @@ const manifest = defineManifest({
   manifest_version: 3,
   name: "画像ダウンロード",
   description: "サイトの画像を一括でダウンロードできます。",
-  version: "1.1.0",
+  version: "1.1.1",
   icons: {
     16: "img/icon16.png",
     48: "img/icon48.png",
